@@ -149,7 +149,7 @@ func (h *CSRFHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if sContains(safeMethods, r.Method) || h.IsExempt(r) || h.IsIgnored(r) {
+	if sContains(safeMethods, r.Method) || h.IsExempt(r)  {
 		// short-circuit with a success for safe methods
 		h.handleSuccess(w, r)
 		return
